@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
   <meta charset="UTF-8">
   
@@ -33,74 +34,103 @@
     }
 
     .iframe-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      padding: 2vw;
-      gap: 2vw;
-      font-size: calc(0.8vw + 0.5em); /* Responsive font size */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0 20vw; /* Provide some spacing */
+  gap: 20px; /* Space between iframes */
+}
 
-    }
+iframe {
+  width: 100%; /* Full width on smaller screens */
+  height: 200px; /* Adjust height depending on content */
+  border: none;
+  background-color: #fff;
+}
 
-    iframe {
-      flex: 1 1 48%;
-      max-width: 48%;
-      height: auto;
-      border: none;
-      background-color: #fff;
-    }
+@media (min-width: 768px) {
+  iframe {
+    width: 48%; /* Two iframes per row on medium screens */
+  }
+}
+
+@media (min-width: 1200px) {
+  iframe {
+    width: 31%; /* Three iframes per row on large screens */
+  }
+}
+
 
     img, video {
       display: block;
-      max-width: 100%;
+      max-width: 90%;
       height: auto;
       margin: 20px auto;
+
+    }
+
+    .video-content {
+      width: 90%;  /* Ensures the video takes full width of its container */
+      max-width: 90%;  /* Prevents the video from exceeding the width of the screen */
+       
+
     }
 
 
-    .Map, .gram, .metaluse,.interview, .h3, .h6, .chart {
+     .h3,.h2, .h6,.description  {
       text-align: center;
-      margin: .1vw, ;
+      margin: 2vw, ;
       color: #FFFA6F;
-        font-size: calc(0.8vw + 5em); /* Responsive font size */ 
+        font-size: calc(.1vw + .5em); /* Responsive font size */ 
 
     }
-    .description, .info{
-        font-size: calc(0.8vw + 0.5em); /* Responsive font size */ 
+    .info, .Map, .gram, .metaluse, .chart,.interview{
+        font-size: calc(.1vw + 5em); /* Responsive font size */ 
         text-align: center;
       margin: 10vw 0;
       color: #FFFA6F;  
+      padding: 0 5vw;      
+      margin: 10vw;
+
     }
+    
+
     .page-title {
       margin: 2vw 0;
-      font-size: calc(5vw + 1em); /* Responsive font size for the title */
+      font-size: calc(1vw + 2em); /* Responsive font size for the title */
       color: #FFFA6F;
+      padding: 0  5vw;
     }
 
     .description p, .info {
-      padding: 1%;
-      margin: 1%;
-
-      color: #ffffff;
-      font-size: calc(0.5vw + 1em);
+        padding: 0 15vw;      
+         margin: 0%;
+      font-size: calc(.1vw + 2em); /* Responsive font size for the title */
+      color:  
+      #ffffff;
       text-align: center;
+      margin:1%;
+      
 
     }
 
 
-    @media (min-width: 600px) {
-      iframe {
-        flex: 1 1 48%; /* Adjust to fit two iframes per row on wider screens */
-      }
-    }
 
-    @media (min-width: 1024px) {
-      iframe {
-        flex: 1 1 31%; /* Adjust to fit three iframes per row on even wider screens */
-      }}
 </style>
 </head>
 <body>
+    <script>
+        window.addEventListener('resize', function() {
+          var iframes = document.querySelectorAll('iframe');
+          for (var i = 0; i < iframes.length; i++) {
+            var iframe = iframes[i];
+            var computedWidth = iframe.clientWidth; // Get current iframe width
+            var newSize = Math.floor(computedWidth / 100); // Calculate new size as a simple example
+            // Sending a message that the content may not handle
+            iframe.contentWindow.postMessage({ fontSize: newSize + 'px' }, '*');
+          }
+        });
+        </script>
     
     <h1 class="page-title">The Importance of Metal Recycling in Jewelry Metal Art at CCA</h1>
     <div class="iframe-container">
@@ -108,17 +138,17 @@
   
 
        
-            <iframe title="Tons of resources mined from Earth" src="https://www.theworldcounts.com/embeds/counters/16?background_color=white&color=black&font_family='Helvetica Neue', Arial, sans-serif&font_size=20vw;" style="border: none"></iframe>
-            <iframe title="Tons of resources extracted from Earth" src="https://www.theworldcounts.com/embeds/counters/5?background_color=white&color=black&font_family='Helvetica Neue', Arial, sans-serif&font_size=20vw" style="border: none"></iframe>
-            <iframe title="Energy use from mining" src="https://www.theworldcounts.com/embeds/counters/32?background_color=white&color=black&font_family='Helvetica Neue', Arial, sans-serif&font_size=20vw" style="border: none"></iframe>
-            <iframe title="Tons of melted ice" src="https://www.theworldcounts.com/embeds/counters/22?background_color=white&color=black&font_family='Helvetica Neue', Arial, sans-serif&font_size=20vw" style="border: none"></iframe>
-            <iframe title="Tons of toxic waste produced from gold mining" src="https://www.theworldcounts.com/embeds/counters/26?background_color=white&color=black&font_family='Helvetica Neue', Arial, sans-serif&font_size=20vw" style="border: none"></iframe>
-            <iframe title="Tons of gold mined" src="https://www.theworldcounts.com/embeds/counters/17?background_color=white&color=black&font_family='Helvetica Neue', Arial, sans-serif&font_size=20vw" style="border: none"></iframe>
-            <iframe title="Tons of coal mined" src="https://www.theworldcounts.com/embeds/counters/60?background_color=white&color=black&font_family='Helvetica Neue', Arial, sans-serif&font_size=20vw" style="border: none"></iframe>
-            <iframe title="Tons of steel recycled" src="https://www.theworldcounts.com/embeds/counters/54?background_color=white&color=black&font_family='Helvetica Neue', Arial, sans-serif&font_size=20vw" style="border: none"></iframe>
-            <iframe title="Tons of wastewater from steel mining" src="https://www.theworldcounts.com/embeds/counters/58?background_color=white&color=black&font_family='Helvetica Neue', Arial, sans-serif&font_size=20vw" style="border: none"></iframe>
-            <iframe title='Tons of steel produced' src='https://www.theworldcounts.com/embeds/counters/62?background_color=white&color=black&font_family=%22Helvetica+Neue%22%2C+Arial%2C+sans-serif&font_size=20vw' style='border: none' height='2vh' width='2vw'></iframe>         
-            <iframe title="Percent of species in critical risk of extinction" src="https://www.theworldcounts.com/embeds/counters/66?background_color=white&color=black&font_family='Helvetica Neue', Arial, sans-serif&font_size=20vw" style="border: none"></iframe>
+            <iframe title="Tons of resources mined from Earth" src="https://www.theworldcounts.com/embeds/counters/16?background_color=white&color=black&font_family='Helvetica Neue', Arial, sans-serif&font_size= 25vw;" style="border: none"></iframe>
+            <iframe title="Tons of resources extracted from Earth" src="https://www.theworldcounts.com/embeds/counters/5?background_color=white&color=black&font_family='Helvetica Neue', Arial, sans-serif&font_size=25vw" style="border: none"></iframe>
+            <iframe title="Energy use from mining" src="https://www.theworldcounts.com/embeds/counters/32?background_color=white&color=black&font_family='Helvetica Neue', Arial, sans-serif&font_size=25vw" style="border: none"></iframe>
+            <iframe title="Tons of melted ice" src="https://www.theworldcounts.com/embeds/counters/22?background_color=white&color=black&font_family='Helvetica Neue', Arial, sans-serif&font_size=25vw" style="border: none"></iframe>
+            <iframe title="Tons of toxic waste produced from gold mining" src="https://www.theworldcounts.com/embeds/counters/26?background_color=white&color=black&font_family='Helvetica Neue', Arial, sans-serif&font_size=23vw" style="border: none"></iframe>
+            <iframe title="Tons of gold mined" src="https://www.theworldcounts.com/embeds/counters/17?background_color=white&color=black&font_family='Helvetica Neue', Arial, sans-serif&font_size=25vw" style="border: none"></iframe>
+            <iframe title="Tons of coal mined" src="https://www.theworldcounts.com/embeds/counters/60?background_color=white&color=black&font_family='Helvetica Neue', Arial, sans-serif&font_size=25vw" style="border: none"></iframe>
+            <iframe title="Tons of steel recycled" src="https://www.theworldcounts.com/embeds/counters/54?background_color=white&color=black&font_family='Helvetica Neue', Arial, sans-serif&font_size=25vw" style="border: none"></iframe>
+            <iframe title="Tons of wastewater from steel mining" src="https://www.theworldcounts.com/embeds/counters/58?background_color=white&color=black&font_family='Helvetica Neue', Arial, sans-serif&font_size=25vw" style="border: none"></iframe>
+            <iframe title='Tons of steel produced' src='https://www.theworldcounts.com/embeds/counters/62?background_color=white&color=black&font_family=%22Helvetica+Neue%22%2C+Arial%2C+sans-serif&font_size=25vw' style='border: none' height='2vh' width='2vw'></iframe>         
+            <iframe title="Percent of species in critical risk of extinction" src="https://www.theworldcounts.com/embeds/counters/66?background_color=white&color=black&font_family='Helvetica Neue', Arial, sans-serif&font_size=25vw" style="border: none"></iframe>
                   </div>
                 </div>
   </div>
@@ -136,10 +166,12 @@
     <img src="chart.jpg" alt="Natural Resource Management Data Visualization" class="additional-image">
     <h1 class="interview">Interview With Curtis Arima  </h1>
     <img src="interc.jpg" alt="Natural Resource Management Data Visualization" class="additional-image">
+    
     <video controls class="video-content">
-      <source src="interviewv.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
+        <source src="interviewv.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+
     <h1 class="page-title">Resources Mentioned in the Interview</h1>
     <h2><a href="https://protectconglomeratemesa.com/">Issues with gold mining and how we can protect land</a></h2>
     <h2><a href="https://ethicalmetalsmiths.org/blog/field-trip-hoover-strong">How gold is recycled in larger scale industry</a></h2>
